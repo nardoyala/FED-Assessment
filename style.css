@@ -1,23 +1,23 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
+}
+
+main {
+  height: calc(100vh - 78px);
+  display: flex;
+  justify-content: center;
 }
 
 .title-bar {
   padding: 20px;
   background-color: #EFEFEF;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-end;
 }
-
 .title-bar__button {
   padding: 12px;
   background-color: #555555;
@@ -26,14 +26,73 @@ body {
   font-size: 12px;
   line-height: 14px;
   border: none;
-  -webkit-transition: opacity 400ms linear;
   transition: opacity 400ms linear;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-
 .title-bar__button:hover {
   opacity: 75%;
 }
+
+.products {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
+.product__card {
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.125);
+}
+.product__card__thumbnail {
+  margin: 0;
+}
+.product__card__thumbnail img {
+  max-width: 200px;
+}
+.product__card__title {
+  margin: 0;
+  margin-top: 1rem;
+  font-weight: normal;
+}
+.product__card__price {
+  display: inline-block;
+  margin: 0.5rem auto;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.product__card__tags a {
+  margin-top: 10px;
+  padding: 4px 8px;
+  color: #444;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background-color: #d3d3d3;
+  border-radius: 20px;
+}
+
+.loader {
+  margin: auto;
+  border: 5px solid gray;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

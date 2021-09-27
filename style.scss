@@ -1,7 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
+}
+main {
+  height: calc(100vh - 78px);
+  display: flex;
+  justify-content: center;
 }
 .title-bar {
   padding: 20px;
@@ -28,3 +34,59 @@ body {
 }
 
 // Add your scss below this line
+
+.products {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+.product__card {
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: .5rem;
+  box-shadow: 1px 1px 8px rgba(0,0,0,.125);
+  &__thumbnail {
+    margin: 0;
+    img {
+      max-width: 200px;
+    }
+  }
+  &__title {
+    margin: 0;
+    margin-top: 1rem;
+    font-weight: normal;
+  }
+  &__price {
+    display: inline-block;
+    margin: .5rem auto;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  &__tags {
+    a {
+      margin-top: 10px;
+      padding: 4px 8px;
+      color: #444;
+      font-size: .9rem;
+      text-decoration: none;
+      background-color: #d3d3d3;
+      border-radius: 20px;
+    }
+  }
+}
+
+.loader {
+  margin: auto;
+  border: 5px solid gray;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
