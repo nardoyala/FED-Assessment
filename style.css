@@ -6,9 +6,10 @@ body {
 }
 
 main {
-  height: calc(100vh - 78px);
   display: flex;
   justify-content: center;
+  padding: 2rem 0;
+  min-height: calc(100vh - 78px);
 }
 
 .title-bar {

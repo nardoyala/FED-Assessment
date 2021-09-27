@@ -9,7 +9,6 @@ const Products = {
     // Render the products here
     const root = document.getElementById("root");
     const products = productsJson.data.products.edges;
-    console.log(products)
     root.innerHTML = Products.generateProductCards(products)
 
   },
