@@ -64,6 +64,7 @@ main {
 .products {
   display: grid;
   width: 100%;
+  max-width: 1200px;
   grid-template-columns: 1fr;
 }
 
