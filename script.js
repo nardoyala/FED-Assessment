@@ -7,6 +7,10 @@ const Products = {
   displayProducts: productsJson => {
 
     // Render the products here
+    const root = document.getElementById("root");
+    const products = productsJson.data.products.edges;
+    console.log(products)
+    root.innerHTML = Products.generateProductCards(products)
 
   },
 
@@ -23,7 +27,7 @@ const Products = {
    */
   query: () => `
     {
-      products(first:3) {
+      products(first:12) {
         edges {
           node {
             id
@@ -53,6 +57,8 @@ const Products = {
    * Fetches the products via GraphQL then runs the display function
    */
   handleFetch: async () => {
+    const root = document.getElementById("root");
+    root.innerHTML = `<div class="loader"></div>`
     const productsResponse = await fetch(Products.state.storeUrl, {
       method: "POST",
       headers: {
@@ -66,6 +72,33 @@ const Products = {
     });
     const productsResponseJson = await productsResponse.json();
     Products.displayProducts(productsResponseJson);
+  },
+
+  /**
+   * Generates the html for the product cards
+   */
+  generateProductCards: (products) => {
+    const view = `
+      <div class="products">
+        ${products.map((product) => `
+          <div class="product__card">
+            <figure class="product__card__thumbnail">
+              <img src="${product.node.images.edges[0].node.originalSrc}" alt="${product.node.title}" />
+            </figure>
+            <h4 class="product__card__title">${product.node.title}</h4>
+            <span class="product__card__price">$ ${product.node.priceRange.minVariantPrice.amount}</span>
+            <div class="product__card__tags">
+            ${product.node.tags.map((tag) => {
+              return (`
+                  <a href="#">${tag}</a>
+                  `)
+                }).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `
+    return view;
   },
 
   /**
