@@ -93,6 +93,7 @@ const Products = {
                   `)
                 }).join('')}
             </div>
+            <button class="add-button" type="button">Add to cart</button>
           </div>
         `).join('')}
       </div>

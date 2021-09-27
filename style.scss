@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +13,7 @@ main {
   display: flex;
   justify-content: center;
   padding: 2rem 0;
-  min-height: calc(100vh - 78px);
+  min-height: calc(100vh - 110px);
 }
 .title-bar {
   padding: 20px;
@@ -93,6 +98,19 @@ main {
   }
 }
 
+.add-button {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #33b561;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
 .loader {
   margin: auto;
   border: 5px solid gray;
@@ -100,8 +118,8 @@ main {
   animation: spin 1s linear infinite;
   border-top: 5px solid white;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 @keyframes spin {
 0% { transform: rotate(0deg); }
