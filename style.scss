@@ -76,6 +76,22 @@ main {
   }
 }
 
+@media screen and (min-width: 481px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 769px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1025px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .loader {
   margin: auto;
   border: 5px solid gray;
