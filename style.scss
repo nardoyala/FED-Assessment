@@ -38,9 +38,24 @@ main {
     }
   }
 }
-
-// Add your scss below this line
-
+.loader {
+  margin: auto;
+  border: 5px solid gray;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .products {
   display: grid;
   width: 100%;
@@ -81,7 +96,18 @@ main {
     }
   }
 }
-
+.add-button {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #33b561;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
 @media screen and (min-width: 481px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
@@ -96,32 +122,4 @@ main {
   .products {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-.add-button {
-  margin-top: 1rem;
-  padding: 8px 16px;
-  width: 100%;
-  color: white;
-  text-transform: uppercase;
-  font-weight: 600;
-  background-color: #33b561;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-.loader {
-  margin: auto;
-  border: 5px solid gray;
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-  border-top: 5px solid white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-@keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
 }
